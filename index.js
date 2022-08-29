@@ -1,9 +1,17 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const nums = {}; 
+  for (let i = 0; i < array.length; i++) {const num = array[i];
+    if (target - num in nums) { return true; }
+    nums[array[i]] = i;
+  }
+  return false;
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  Write the Big O time complexity of your function here 
+  linear big o notation
+  n is the number of tasks to be performed minus the constants
 */
 
 /* 
@@ -12,6 +20,7 @@ function hasTargetSum(array, target) {
 
 /*
   Add written explanation of your solution here
+  it will loop through the whole array
 */
 
 // You can run `node index.js` to view these console logs
